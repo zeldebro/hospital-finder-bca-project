@@ -1,0 +1,27 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<frameset rows="165,11%,*,75" frameborder="0" border="0" >
+  <frame name="f1" src="framef1.html">
+  <frame name="f2" src="framef2.html">
+<frameset cols="200,*" frameborder="0" border="0">
+  <frame name="f3" src="framef3.html" scrolling="auto" noresize>
+  <frame name="f4" src="framef4.html" scrolling="auto" noresize>
+</frameset>
+   <frame name="f5" src="framef5.html">
+</frameset>
+<noframes></noframes>
+<body>
+<script type="text/JavaScript">
+//Script courtesy of BoogieJack.com
+var message="NoRightClicking";
+function defeatIE() {if (document.all) {(message);return false;}}
+function defeatNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {(message);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=defeatNS;}
+else{document.onmouseup=defeatNS;document.oncontextmenu=defeatIE;}
+document.oncontextmenu=new Function("return false")
+</script>
+</body>
+</html>

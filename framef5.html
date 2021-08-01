@@ -1,0 +1,64 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.button {
+  padding: 10px 20px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #BA55D3;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+</style>
+</head>
+<body bgcolor="black">
+<center>
+<a href="hos.html" target="f6"><button class="button">find hospitals </button></a>
+<a href="docn.html" target="f8"><button class="button">find docters by names </button></a>
+<a href="map.html" target="f7"><button class="button">Locate on map </button></a>
+</cemter>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+if (document.layers) {
+        //Capture the MouseDown event.
+    document.captureEvents(Event.MOUSEDOWN);
+ 
+    //Disable the OnMouseDown event handler.
+    $(document).mousedown(function () {
+        return false;
+    });
+}
+else {
+    //Disable the OnMouseUp event handler.
+    $(document).mouseup(function (e) {
+        if (e != null && e.type == "mouseup") {
+            //Check the Mouse Button which is clicked.
+            if (e.which == 2 || e.which == 3) {
+                //If the Button is middle or right then disable.
+                return false;
+            }
+        }
+    });
+}
+ 
+//Disable the Context Menu event.
+$(document).contextmenu(function () {
+    return false;
+});
+</script>
+</body>
+<br><h3 style="color:blue;margin-left:30px;">PROJECT BY Raghunath Babalsure<br>HVPM COET<br>AMRAVATI<h3>
+</html>
